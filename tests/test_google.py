@@ -20,9 +20,4 @@ def test_open_google():
 
         browser.close()
 
-<<<<<<< HEAD
 # Thảo comment 221 comment
-=======
-# Thảo comment 221 comment branch new_test
-# new test branch
->>>>>>> 95ad34d3c135cf4e0bc4952ba5244758e5e8da48
