@@ -19,3 +19,5 @@ def test_open_google():
         page.wait_for_timeout(3000)
 
         browser.close()
+
+# Thảo comment 1
