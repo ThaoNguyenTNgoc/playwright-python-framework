@@ -1,8 +1,9 @@
 import asyncio
-from playwright.async_api import async_playwright, Playwright
+import pytest
+from playwright.async_api import async_playwright
+@pytest.mark.asyncio
 
-
-async def test_open_vpb_upl(playwright: Playwright):
+async def test_open_vpb_upl():
     async with async_playwright() as playwright:
         chromium = playwright.chromium
         browser = await chromium.launch(headless=False, slow_mo=5000)
@@ -42,7 +43,9 @@ async def test_open_vpb_upl(playwright: Playwright):
         # Tìm tất cả các ô input nằm bên trong khu vực hiển thị OTP
         # (Thông thường các ô này có type="tel" hoặc type="number")
         
-        otp_inputs = page.locator("input[type='tel']") 
+        # otp_inputs = page.locator("input[type='tel']") 
+        otp_inputs = page.locator(".otp-input") 
+        await otp_inputs.highlight()
         # Nếu locator trên không tìm thấy, bạn có thể thử đổi thành: page.locator(".otp-input") hoặc page.locator("input")
 
         # Chạy vòng lặp điền từng số vào từng ô
@@ -55,6 +58,3 @@ async def test_open_vpb_upl(playwright: Playwright):
 async def main():
     async with async_playwright() as playwright:
         await test_open_vpb_upl(playwright)
-
-
-asyncio.run(main())
