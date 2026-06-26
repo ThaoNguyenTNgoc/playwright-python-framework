@@ -8,8 +8,8 @@
       "module": "pytest",
       "args": [
         "-s",
-        // "tests/VPB_UPL.py"
-        "tests/api_testing.py"
+        "tests/VPB_UPL.py"
+        // "tests/api_testing.py"
 
       ],
       "console": "integratedTerminal",
