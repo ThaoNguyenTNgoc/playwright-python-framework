@@ -38,7 +38,7 @@ async def test_open_vpb_upl():
         submit_button = page.get_by_role("button", name="Xác nhận")
         await submit_button.click()
         await page.wait_for_timeout(100)
-        otp_code = "123456"
+        otp_code = "000123456"
 
         # Tìm tất cả các ô input nằm bên trong khu vực hiển thị OTP
         # (Thông thường các ô này có type="tel" hoặc type="number")
